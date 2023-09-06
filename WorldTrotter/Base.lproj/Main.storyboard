@@ -1,24 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cIz-Ud-Wfm">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Convert-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Convert" id="BYZ-38-t0r" customClass="ConversionViewController" customModule="WorldTrotter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="degrees Fahrenheit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3G-tK-U9O">
+                                <rect key="frame" x="49" y="160.33333333333334" width="295" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <color key="textColor" red="0.88235294117647056" green="0.34509803921568627" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="is really" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geC-Sz-b6L">
+                                <rect key="frame" x="139.66666666666666" y="211.33333333333334" width="114" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S9k-2J-gBc">
+                                <rect key="frame" x="138" y="262.33333333333331" width="117" height="84"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                                <color key="textColor" red="0.88235294117647056" green="0.34509803921568627" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="degrees Celsius" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jyf-lY-RGn">
+                                <rect key="frame" x="73.666666666666686" y="354.33333333333331" width="246" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <color key="textColor" red="0.88235294117647056" green="0.34509803921568627" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="value" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SH6-GD-YFr">
+                                <rect key="frame" x="118.66666666666669" y="67" width="156" height="85.333333333333314"/>
+                                <color key="textColor" red="0.88235294119999996" green="0.34509803919999998" blue="0.16078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="fahrenheitFieldEditingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="FUe-qq-76y"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="gpP-s9-CAh"/>
+                                </connections>
+                            </textField>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.96078431372549022" green="0.95686274509803915" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="Jyf-lY-RGn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7gF-1P-dAG"/>
+                            <constraint firstItem="Jyf-lY-RGn" firstAttribute="top" secondItem="S9k-2J-gBc" secondAttribute="bottom" constant="8" id="Fi2-2q-Uym"/>
+                            <constraint firstItem="S9k-2J-gBc" firstAttribute="top" secondItem="geC-Sz-b6L" secondAttribute="bottom" constant="8" id="Pmp-Gw-EkW"/>
+                            <constraint firstItem="geC-Sz-b6L" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TaS-cG-h9X"/>
+                            <constraint firstItem="b3G-tK-U9O" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="i0g-1s-MUC"/>
+                            <constraint firstItem="SH6-GD-YFr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="lWV-iP-Lxr"/>
+                            <constraint firstItem="SH6-GD-YFr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="un8-F5-M74"/>
+                            <constraint firstItem="b3G-tK-U9O" firstAttribute="top" secondItem="SH6-GD-YFr" secondAttribute="bottom" constant="8" id="vA0-tB-P7P"/>
+                            <constraint firstItem="geC-Sz-b6L" firstAttribute="top" secondItem="b3G-tK-U9O" secondAttribute="bottom" constant="8" id="yXK-eb-Wle"/>
+                            <constraint firstItem="S9k-2J-gBc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ygC-9z-dsP"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Za0-n6-aco" appends="YES" id="3Lz-yX-UNm"/>
+                        </connections>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Convert" image="ConvertIcon" id="k8A-W1-5rS"/>
+                    <connections>
+                        <outlet property="celsiusLabel" destination="S9k-2J-gBc" id="RAz-Km-Gqv"/>
+                        <outlet property="textField" destination="SH6-GD-YFr" id="Mzc-vH-Hdj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Za0-n6-aco">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="BYZ-38-t0r" id="yrR-QY-it4"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="949" y="698"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="XXo-Hp-vsu">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="cIz-Ud-Wfm" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hr8-lQ-TSH">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="M5p-fu-NNi"/>
+                        <segue destination="7y9-Cf-RQe" kind="relationship" relationship="viewControllers" id="87b-ge-AxR"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K36-ye-vQH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="948.85496183206101" y="-26.056338028169016"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="K81-42-n3p">
+            <objects>
+                <viewController title="Map" id="7y9-Cf-RQe" customClass="MapViewController" customModule="WorldTrotter" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Map" image="MapIcon" id="k5c-TV-R7z"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pWX-3e-9mh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1895" y="-26"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ConvertIcon" width="48.333332061767578" height="32.333332061767578"/>
+        <image name="MapIcon" width="48.333332061767578" height="32.333332061767578"/>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
